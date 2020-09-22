@@ -32,6 +32,16 @@ const reducer = (state, action) => {
         ...state,
         playlist: action.playlist,
       };
+    case "SET_IS_PLAYING":
+      return {
+        ...state,
+        isPlaying: action.isPlaying,
+      };
+    case "SET_ITEM":
+      return {
+        ...state,
+        item: action.item,
+      };
     default:
       return state;
   }

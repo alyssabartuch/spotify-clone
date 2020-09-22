@@ -35,14 +35,12 @@ function App() {
           playlists: playlists,
         });
 
-        spotify
-          .getPlaylist(playlists.items[0]?.uri.split(":")[2])
-          .then((response) => {
-            dispatch({
-              type: "SET_PLAYLIST",
-              playlist: response,
-            });
+        spotify.getPlaylist(playlists.items[0]?.id).then((response) => {
+          dispatch({
+            type: "SET_PLAYLIST",
+            playlist: response,
           });
+        });
       });
     }
   }, []);
